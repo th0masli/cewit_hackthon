@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+import collections
 import detect.classifier as clr
 import numpy as np
 
 # Create your views here.
 def test(request):
     test_case = request.POST
+    test_case = collections.OrderedDict(sorted(test_case.items()))
     tmp = []
     for k, v in test_case.items():
         print(k)
