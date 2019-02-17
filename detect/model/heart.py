@@ -8,7 +8,6 @@ Author: Yao Li
 
 import pickle
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -61,7 +60,7 @@ class model:
 
     #save model to specified path
     def save_model(self, clf):
-        clf_path = '../model/model.sav'
+        clf_path = 'model_new.sav'
         pickle.dump(clf, open(clf_path, 'wb'))
 
         return
@@ -69,7 +68,7 @@ class model:
 
 def main():
     lr_model = model()
-    lr_model.load_data('../data/heart.csv')
+    lr_model.load_data('heart.csv')
     lr_model.train()
 
 

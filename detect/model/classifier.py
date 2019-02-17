@@ -41,7 +41,7 @@ class classifier:
 def main():
     #test_case = np.asarray([[63, 1, 3, 145, 233, 1, 0, 150, 0, 2.3, 0, 0, 1]])
     test_case = np.asarray([[58, 1, 0, 100, 234, 0, 1, 156, 0, 0.1, 2, 1, 3]])
-    diag = classifier(test_case, '../model/model.sav', '../data/heart.csv')
+    diag = classifier(test_case, 'model_new.sav', 'heart.csv')
     diag.predit()
 
 
