@@ -19,7 +19,7 @@ def test(request):
     test_case = np.asarray([tmp])
     #test_case = np.asarray([[63, 1, 3, 145, 233, 1, 0, 150, 0, 2.3, 0, 0, 1]])
     #test_case = np.asarray([[58, 1, 0, 100, 234, 0, 1, 156, 0, 0.1, 2, 1, 3]])
-    diag = clr.classifier(test_case, 'detect/model/model.sav')
+    diag = clr.classifier(test_case, 'detect/model/model_new.sav')
     res = int(diag.predict())
     #print(res)
 
