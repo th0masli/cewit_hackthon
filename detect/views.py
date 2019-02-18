@@ -9,6 +9,7 @@ import numpy as np
 def test(request):
     test_case = request.POST
     test_case = collections.OrderedDict(sorted(test_case.items()))
+    default = [58, 1, 0, 100, 234, 0, 1, 150, 0, 2.3, 0, 0, 1]
     tmp = []
     for k, v in test_case.items():
         #print(k)
@@ -16,9 +17,12 @@ def test(request):
             continue
         #print(v)
         try:
-            tmp.append(float(v))
+            try:
+                tmp.append(float(v))
+            except:
+                tmp.append(int(v))
         except:
-            tmp.append(int(v))
+            tmp.append(default[len(tmp)])
     test_case = np.asarray([tmp])
     #test_case = np.asarray([[63, 1, 3, 145, 233, 1, 0, 150, 0, 2.3, 0, 0, 1]])
     #test_case = np.asarray([[58, 1, 0, 100, 234, 0, 1, 156, 0, 0.1, 2, 1, 3]])
